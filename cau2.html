@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hai Phân Số</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      height: 100%;
+      width: 100%;
+      padding: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      height: 100%;
+    }
+
+    label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      display: block;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+
+  </style>
+</head>
+<body>
+<div>
+  <h2>Kiểm tra hai phân số có bằng nhau không</h2>
+
+  <form>
+    <label for="numerator1">Tử số phân số 1:</label>
+    <input type="number" id="numerator1" required><br>
+
+    <label for="denominator1">Mẫu số phân số 1:</label>
+    <input type="number" id="denominator1" required><br>
+
+    <label for="numerator2">Tử số phân số 2:</label>
+    <input type="number" id="numerator2" required><br>
+
+    <label for="denominator2">Mẫu số phân số 2:</label>
+    <input type="number" id="denominator2" required><br>
+
+    <button type="button" onclick="checkEquality()">Kiểm tra</button>
+  </form>
+
+  <p id="result"></p>
+</div>
+
+<script>
+  function checkEquality() {
+    let numerator1 = parseInt(document.getElementById("numerator1").value);
+    let denominator1 = parseInt(document.getElementById("denominator1").value);
+    let numerator2 = parseInt(document.getElementById("numerator2").value);
+    let denominator2 = parseInt(document.getElementById("denominator2").value);
+    let result_a = document.getElementById("result");
+
+    if (denominator1 === 0 || denominator2 === 0) {
+      result_a.innerText = "Mẫu số không thể bằng 0";
+      return;
+    }
+
+    if (numerator1 * denominator2 === numerator2 * denominator1) {
+      result_a.innerText = "Hai phân số bằng nhau";
+      result_a.style.color = "green";
+    } else {
+      result_a.innerText = "Hai phân số không bằng nhau";
+      result_a.style.color = "red";
+    }
+  }
+</script>
+</body>
+</html>
